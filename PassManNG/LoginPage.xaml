@@ -1,0 +1,47 @@
+﻿<Page x:Class="PassManNG.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="Login" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="PassManNGLogInScreen.png"/>
+        </Grid.Background>
+        <TextBox x:Name="LoginScreenLogin" HorizontalAlignment="Center" Height="22" Margin="50,97,50,181" TextWrapping="Wrap" Text="{DynamicResource LoginString}" VerticalAlignment="Center" Width="200" BorderThickness="0" TextAlignment="Center" GotFocus="ClearCurrentText" Tag="{DynamicResource LoginString}" LostFocus="ReWriteTipText" Foreground="#FF0074FF" Visibility="Visible" MinHeight="20" MaxHeight="30" BorderBrush="{x:Null}" FontFamily="Noto Sans"/>
+        <TextBox x:Name="LoginScreenPassword" HorizontalAlignment="Center" Height="22" Margin="50,128,50,150" TextWrapping="Wrap" Text="{DynamicResource PasswordString}" VerticalAlignment="Center" Width="200" BorderThickness="0" TextAlignment="Center" GotFocus="ClearCurrentText" Tag="{DynamicResource PasswordString}" LostFocus="ReWriteTipText" Foreground="#FF0074FF" Visibility="Visible" MinHeight="20" MaxHeight="30" BorderBrush="{x:Null}" FontFamily="Noto Sans"/>
+        <Button x:Name="LoginScreenLoginButton" Content="{DynamicResource LoginProfileButton}" HorizontalAlignment="Center" Margin="50,160,50,118" VerticalAlignment="Center" Width="200" Height="22" BorderThickness="0" Foreground="Black" Background="#FF002EFF" BorderBrush="{x:Null}" Click="LoginProfileButton_Click" Visibility="Visible" MinHeight="20" MaxHeight="30" FontFamily="Noto Sans" IsDefault="True" Cursor="Hand"/>
+        <PasswordBox x:Name="LoginScreenActualPasswordBox" HorizontalAlignment="Center" Margin="50,128,50,150" VerticalAlignment="Top" Width="200" LostFocus="ReWriteTipText" Background="White" Visibility="Hidden" MinHeight="22" MaxHeight="30"/>
+        <!--<Button x:Name="SearchBigButton" HorizontalAlignment="Left" Height="200" Margin="145,49,0,0" VerticalAlignment="Top" Width="100" BorderThickness="1" Background="#FF5492FF" Visibility="Hidden" Click="ManageMenu" BorderBrush="Cyan" Foreground="#FF35334F" FontWeight="Bold" FontStretch="Condensed">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="{DynamicResource Get}"/>
+            </Button.Content>
+        </Button>
+        <Button x:Name="AddBigButton" HorizontalAlignment="Left" Height="100" Margin="245,49,0,0" VerticalAlignment="Top" Width="100" Background="#FF5492FF" BorderThickness="1" Visibility="Hidden" Click="ManageMenu" FontWeight="Bold" FontStretch="Condensed" BorderBrush="Cyan" Foreground="#FF35334F">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="{DynamicResource SetPassword}"/>
+            </Button.Content>
+        </Button>
+        <Button x:Name="HelpBigButton" HorizontalAlignment="Left" Height="100" Margin="245,149,0,0" VerticalAlignment="Top" Width="100" Background="#FF5492FF" BorderThickness="1" Visibility="Hidden" Click="ManageMenu" Foreground="#FF35334F" BorderBrush="Cyan" FontWeight="Bold" FontStretch="Condensed">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="{DynamicResource HelpButton}"/>
+            </Button.Content>
+        </Button>-->
+        <Button x:Name="LoginScreenNewProfile" Content="{DynamicResource NewProfileButtonHome}" HorizontalAlignment="Left" Margin="15,0,0,15" VerticalAlignment="Bottom" BorderThickness="0" Background="{x:Null}" Foreground="#FF0074FF" HorizontalContentAlignment="Left" Click="NewProfileButton_Click" Cursor="Hand" MinHeight="20" MaxHeight="30" BorderBrush="{x:Null}" FontFamily="Noto Sans"/>
+        <Label x:Name="bottom_label" Content="" HorizontalAlignment="Left" Margin="10,0,0,5" VerticalAlignment="Bottom"/>
+        <Button HorizontalAlignment="Right" Height="20" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="20" Click="Close_Click" Cursor="Hand" IsCancel="True">
+            <StackPanel>
+                <Image x:Name="CurrentStateImage" Source="negative.jpg"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="forgotPasswordButton" Content="{DynamicResource forgotPasswordButton}" BorderThickness="0" Background="{x:Null}" Foreground="#FF0074FF" HorizontalContentAlignment="Left" Cursor="Hand" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="76,191,65,91" Click="forgotPasswordButton_Click" BorderBrush="{x:Null}" FontFamily="Noto Sans" MinHeight="20"/>
+        <Button x:Name="ChangeLanguageButton" HorizontalAlignment="Right" Height="20" Margin="0,0,6,273" VerticalAlignment="Bottom" Width="20" Click="ChangeLanguage_Click" Cursor="Hand">
+            <StackPanel>
+                <Image x:Name="ChangeLanguage" Source="Globe.png"/>
+            </StackPanel>
+        </Button>
+    </Grid>
+</Page>

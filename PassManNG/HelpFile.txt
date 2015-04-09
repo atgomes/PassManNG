@@ -1,0 +1,38 @@
+PORTUGUES:
+
+1) ADICIONAR ENTRADA: para adicionar uma nova entrada
+	clique em "Adicionar Palavra-Chave" e preencha os
+	quatro campos que surgem. "Etiqueta" devera ser  
+	uma palavra que identifique inequivocamente a    
+	entrada. "Nome de utilizador" e "Palavra-Chave"  
+	sao os dados a guardar. "Notas" e um campo       
+	opcional onde podera adionar outras informacoes.
+
+2) OBTER DADOS: para obter dados clique em "Obter    
+	Palavra-Chave" e seleccione uma das entradas que 
+	se apresentam do lado esquerdo. Os dados        
+	relativos a essa entrada aparecerao nos campos a
+	esquerda. Aparecerao entao tres botoes no fundo	
+	que permitem copiar a password para a area de   
+	transferencia "Copiar Pass"; editar a entrada   
+	"Editar" ou apagar a entrada "Apagar". Em       
+	alternativa podera usar os botao direito do seu 
+	rato diretamente sobre a entrada pretendida.
+
+ENGLISH:
+
+1) ADD ITEM: to add a new item click on "Set Password"
+	and fill the four fields that appear. "Label"    
+	should be a word to represents this new item.    
+	"Login/Username" and "Password" are the data to  
+	be saved. "Notes" is an opcional field were you  
+	saved any extra info you need.
+
+2) RETRIEVE ITEM: to obtain data click on "Get      
+	Password" and select one one of the entries on the
+	left side. Three buttons should appear at the     
+	bottom that allow you to copy the password to the 
+	clipboard "Copy Pass"; edit the selected entry    
+	"Edit" or delete the entry "Delete". As an        
+	alternative you can right-click the entry and     
+	select the desired option from the context menu.

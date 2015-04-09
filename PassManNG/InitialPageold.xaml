@@ -1,0 +1,27 @@
+﻿<Page x:Class="PassManNG.InitialPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="InitialPage" Loaded="Page_Loaded" MaxWidth="517" MaxHeight="298">
+
+    <Grid Background="#FFB1EAFB" MaxWidth="517" MaxHeight="298">
+        <Button x:Name="SearchBigButton" HorizontalAlignment="Center" Height="200" Margin="0,0,100,0" VerticalAlignment="Center" Width="100" BorderThickness="1" Background="#FF5492FF" Visibility="Visible" Click="SearchBigButton_Click" BorderBrush="Cyan" Foreground="#FF35334F" FontWeight="Bold" FontStretch="Condensed">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="{DynamicResource Get}"/>
+            </Button.Content>
+        </Button>
+        <Button x:Name="AddBigButton" HorizontalAlignment="Center" Height="100" Margin="100,0,0,100" VerticalAlignment="Center" Width="100" Background="#FF5492FF" BorderThickness="1" Visibility="Visible" Click="AddBigButton_Click" FontWeight="Bold" FontStretch="Condensed" BorderBrush="Cyan" Foreground="#FF35334F">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="{DynamicResource SetPassword}"/>
+            </Button.Content>
+        </Button>
+        <Button x:Name="HelpBigButton" HorizontalAlignment="Center" Height="100" Margin="100,100,0,0" VerticalAlignment="Center" Width="100" Background="#FF5492FF" BorderThickness="1" Visibility="Visible" Click="HelpBigButton_Click" Foreground="#FF35334F" BorderBrush="Cyan" FontWeight="Bold" FontStretch="Condensed">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="{DynamicResource HelpButton}"/>
+            </Button.Content>
+        </Button>
+    </Grid>
+</Page>

@@ -1,0 +1,44 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Name="MyMainWindow" x:Class="PassManNG.MainWindow"
+        Title="PassManNG" Height="350" Width="525" Icon="System-Key-icon.ico" Loaded="MainWindow_Loaded" ResizeMode="NoResize" SizeToContent="WidthAndHeight" MinWidth="525" MinHeight="350">
+    <Grid x:Name="Grid0" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="517" Background="#FFB1EAFB">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Frame x:Name="SuperFrame" Height="298" Margin="0,20,0,-298" Width="517" Source="/PassManNG;component/LoginPage.xaml" MinWidth="517" MinHeight="298" Loaded="SuperFrame_Loaded" Foreground="{x:Null}" NavigationUIVisibility="Hidden" IsTabStop="False"/>
+        <Menu Height="20" VerticalAlignment="Top" Width="517" Margin="0">
+            <MenuItem x:Name="FileMenuItem" Header="{DynamicResource FileMenu}" IsTabStop="False">
+                <MenuItem x:Name="Profile" Header="{DynamicResource ProfileMenu}" IsEnabled="True">
+                    <MenuItem x:Name="NewProfileMenu" Header="{DynamicResource NewProfileMenu}" Click="NewProfile_Click" />
+                    <MenuItem x:Name="ManageProfile" Header="{DynamicResource ManageProfileMenu}" Click="ManageProfile_Click" IsEnabled="False" />
+                    <MenuItem x:Name="DeleteProfileMenu" Header="{DynamicResource DeleteProfileMenu}" IsEnabled="False" Click="DeleteProfileMenu_Click" />
+                </MenuItem>
+                <!--<MenuItem x:Name="LoginMenu" Header="{StaticResource LoginMenu}" Click="ManageMenu"/>-->
+                <MenuItem x:Name="Exit" Header="{DynamicResource ExitMenu}" Click="Exit_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="OptionsMenuItem" Header="{DynamicResource OptionsMenu}" Visibility="Hidden">
+                <MenuItem x:Name="PreferencesItem" Header="{DynamicResource PreferencesMenu}" Click="PreferencesItem_Click"/>
+                <Separator />
+                <MenuItem x:Name="KeepAboveItem" Header="{DynamicResource KeepAboveMenu}" IsCheckable="True" Checked="KeepAboveItem_Checked" Unchecked="KeepAboveItem_Unchecked"/>
+                <Separator />
+                <MenuItem x:Name="ImportKeyringItem" Header="{DynamicResource ImportKeyringMenu}" Click="ImportKeyringItem_Click"/>
+                <Separator />
+                <MenuItem x:Name="CheckForUpdates" Header="{DynamicResource CheckForUpdatesMenu}" Click="CheckForUpdates_Click"/>
+                <!--<MenuItem x:Name="AllItem" Header="{DynamicResource ClearAll}"/>-->
+            </MenuItem>
+        </Menu>
+        <Grid x:Name="FloatLabelGrid" Margin="172,0,173,-288" MaxHeight="20" VerticalAlignment="Bottom" MaxWidth="517" HorizontalAlignment="Center" Visibility="Hidden">
+            <Rectangle Height="20" Margin="0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2" HorizontalAlignment="Center" MaxWidth="517" MinWidth="50" Width="{Binding ActualWidth, ElementName=FloatLabel}">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="#FFF4F4F5" Opacity="0.75"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Grid Height="20" MaxHeight="20">
+                <Label x:Name="FloatLabel" Content="{DynamicResource CreatedProfileLabel}" Height="20" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="0"/>
+            </Grid>
+        </Grid>
+    </Grid>
+    
+</Window>

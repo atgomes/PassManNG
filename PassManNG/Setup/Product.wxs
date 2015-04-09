@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+	<Product Id="*" Name="PassManNG" Language="1033" Version="1.0.1.0" Manufacturer="ATG" UpgradeCode="aae36cf4-d3a0-4d78-89f6-d59bbf32b152">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+   
+    <Media Id="1" Cabinet="cab1.cab" EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="Setup" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+      <!--<ComponentRef Id="PassManNG.exe"/>-->
+      <ComponentRef Id="ApplicationShortcut"/>
+      <ComponentRef Id="ApplicationDeskShortcutComp"/>
+      <!--<ComponentRef Id="ApplicationStartupShortcutComp"/>-->
+		</Feature>
+    <PropertyRef Id="NETFRAMEWORK45"/>
+
+    <Condition Message="This application requires .NET Framework 4.5. Please install the .NET Framework then run this installer again.">
+      <![CDATA[Installed OR NETFRAMEWORK45]]>
+    </Condition>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="PassManNG" />
+			</Directory>
+      <Directory Id ="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="PassManNG"/>
+      </Directory>
+      <Directory Id ="DesktopFolder"/>
+      <!--<Directory Id ="StartupFolder"/>-->
+		</Directory>
+	</Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationShortcut" Guid="0B614ED8-4C5D-4D9F-82FB-C85085CC5BAD">
+        <Shortcut Id="ApplicationStartMenuShortcut"
+                  Name="PassManNG"
+                  Description="PassManNG Password Manager"
+                  Target="[#PassManNG.exe]"
+                  WorkingDirectory="INSTALLFOLDER">
+          <Icon Id="MYPMenuIcon" SourceFile=".\System-Key-icon.ico"/>
+        </Shortcut>
+        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\Microsoft\MyApplicationName" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="DesktopFolder">
+      <Component Id="ApplicationDeskShortcutComp" Guid="E66ED64F-90A5-4AE4-BB6D-1DE4839F238B">
+        <Shortcut Id="ApplicationDeskShortcut"
+                  Name="PassManNG"
+                  Description="PassManNG Password Manager"
+                  Target="[#PassManNG.exe]"
+                  WorkingDirectory="INSTALLFOLDER">
+          <Icon Id="MYDeskIcon" SourceFile=".\System-Key-icon.ico"/>
+        </Shortcut>
+        <RemoveFolder Id="DesktopFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\Microsoft\MyApplicationName" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+
+  <!--<Fragment>
+    <DirectoryRef Id="StartupFolder">
+      <Component Id="ApplicationStartupShortcutComp" Guid="3B8D9957-5592-4C23-ACD8-CD748F8ADFF3">
+        <Shortcut Id="ApplicationStartUpDeskShortcut"
+                  Name="PassManNG"
+                  Description="PassManNG Password Manager"
+                  Target="[#PassManNG.exe]"
+                  WorkingDirectory="INSTALLFOLDER">
+          <Icon Id="MyIconStartUp" SourceFile=".\System-Key-icon.ico"/>
+        </Shortcut>
+        <RemoveFolder Id="StartupFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\Microsoft\MyApplicationName" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+  </Fragment>-->
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			<Component Id="ProductComponent">
+				<!-- TODO: Insert files, registry keys, and other resources here. -->
+        <File Source="$(var.PassManNG.TargetPath)" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>
